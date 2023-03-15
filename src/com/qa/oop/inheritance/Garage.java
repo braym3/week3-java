@@ -18,6 +18,10 @@ public class Garage {
 		return s;
 	}
 
+	public void removeVehicles(Vehicle vehicle) {
+		this.vehicles.remove(vehicle);
+	}
+
 	public void addVehicle(Vehicle vehicle) {
 		this.vehicles.add(vehicle);
 	}

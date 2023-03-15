@@ -24,6 +24,11 @@ public class Runner {
 
 		// Print model of all vehicles in garage
 		System.out.println(g1.listVehicleModels());
+
+		// Remove the train
+		g1.removeVehicles(t1);
+		// Print all models again
+		System.out.println(g1.listVehicleModels());
 	}
 
 }
