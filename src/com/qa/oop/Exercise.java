@@ -45,6 +45,18 @@ public class Exercise {
 		System.out.println();
 		// Try to find 'Boris'
 		System.out.println(findPerson("Boris", people));
+		System.out.println();
+
+		// Change Mick's job to Plumber and increment age by 1
+		System.out.println("Before: ");
+		System.out.println(p3.printDetails());
+		System.out.println();
+
+		p3.setJob("Plumber");
+		p3.setAge(p3.getAge() + 1);
+
+		System.out.println("After: ");
+		System.out.println(p3.printDetails());
 	}
 
 }
