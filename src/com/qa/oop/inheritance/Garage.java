@@ -10,6 +10,14 @@ public class Garage {
 		return vehicles;
 	}
 
+	public String listVehicleModels() {
+		String s = "";
+		for (Vehicle v : vehicles) {
+			s += "Vehicle model: " + v.getModel() + "\n";
+		}
+		return s;
+	}
+
 	public void addVehicle(Vehicle vehicle) {
 		this.vehicles.add(vehicle);
 	}
