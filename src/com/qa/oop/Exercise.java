@@ -1,19 +1,6 @@
 package com.qa.oop;
 
-import java.util.ArrayList;
-
 public class Exercise {
-
-	public static String findPerson(String name, ArrayList<Person> people) {
-
-		for (Person p : people) {
-			if (p.getName().equals(name)) {
-				return p.printDetails();
-			}
-		}
-
-		return "Name not found";
-	}
 
 	public static void main(String[] args) {
 		// Create person 1 & print details
@@ -34,23 +21,27 @@ public class Exercise {
 
 		System.out.println();
 
-		// Add person 1, 2 & 3 to ArrayList
-		ArrayList<Person> people = new ArrayList<>();
-		people.add(p1);
-		people.add(p2);
-		people.add(p3);
+		// Add person 1, 2 & 3 to PersonManager ArrayList
+		PersonManager pManager = new PersonManager();
+		pManager.addPerson(p1);
+		pManager.addPerson(p2);
+		pManager.addPerson(p3);
 
-		// Find 'Jane'
-		System.out.println(findPerson("Jane", people));
-		System.out.println();
-		// Try to find 'Boris'
-		System.out.println(findPerson("Boris", people));
-		System.out.println();
+		try {
+			// Find 'Jane'
+			System.out.println(pManager.findPerson("Jane").getName());
+			System.out.println();
+			// Try to find 'Boris'
+			System.out.println(pManager.findPerson("Boris").getName());
+			System.out.println();
 
-		// Change Mick's job to Plumber and increment age by 1
-		System.out.println("Before: ");
-		System.out.println(p3.printDetails());
-		System.out.println();
+			// Change Mick's job to Plumber and increment age by 1
+			System.out.println("Before: ");
+			System.out.println(p3.printDetails());
+		} catch (NullPointerException e) {
+			System.out.println("No such person");
+			System.out.println();
+		}
 
 		p3.setJob("Plumber");
 		p3.setAge(p3.getAge() + 1);
