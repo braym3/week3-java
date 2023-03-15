@@ -15,18 +15,22 @@ public class Runner {
 		g1.addVehicle(b1);
 
 		// Add a train to the garage
-		Train t1 = new Train(12, 100, "Orient Express", "Green", 3000, 100, 200, 10, 5000);
+		Train t1 = new Train(12, 100, "Orient Express", "Blue", 3000, 100, 200, 10, 5000);
 		g1.addVehicle(t1);
 
 		// Add a motorbike to the garage
 		Motorbike m1 = new Motorbike(2, 1, "Harley Davidson", "Yellow", 75, 45, 60, "Cruiser");
 		g1.addVehicle(m1);
 
+		// Add a second train to the garage
+		Train t2 = new Train(14, 150, "Flying Scotsman", "Green", 3000, 100, 200, 10, 5000);
+		g1.addVehicle(t2);
+
 		// Print model of all vehicles in garage
 		System.out.println(g1.listVehicleModels());
 
-		// Remove the train
-		g1.removeVehicles(t1);
+		// Remove the second train
+		g1.removeVehicle(t2);
 		// Print all models again
 		System.out.println(g1.listVehicleModels());
 	}
