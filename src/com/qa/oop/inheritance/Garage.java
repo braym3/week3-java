@@ -50,11 +50,11 @@ public class Garage {
 		this.vehicles.remove(id);
 	}
 
-	public void removeVehicleType(Vehicle vehicleClass) {
+	public void removeVehicleType(Class<?> clazz) {
 		ArrayList<Vehicle> toRemove = new ArrayList<Vehicle>();
 		for (Vehicle v : vehicles) {
 			// for each object that matches the type - add to list to remove after loop
-			if (v.getClass().equals(vehicleClass.getClass())) {
+			if (v.getClass() == clazz) {
 				toRemove.add(v);
 			}
 		}

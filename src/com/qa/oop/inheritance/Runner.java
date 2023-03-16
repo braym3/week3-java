@@ -40,7 +40,7 @@ public class Runner {
 		System.out.println(g1.listVehicleModels());
 
 		// remove all bicycles
-		g1.removeVehicleType(b1);
+		g1.removeVehicleType(Bicycle.class);
 		// Print all models again
 		System.out.println("Removed bicycles: ");
 		System.out.println(g1.listVehicleModels());
