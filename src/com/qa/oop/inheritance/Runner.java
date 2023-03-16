@@ -52,6 +52,20 @@ public class Runner {
 
 		// Print bill for all vehicles
 		System.out.println(g1.calculateAllBills());
+
+		// List all vehicle ID's
+		System.out.println(g1.listVehicleIDs());
+		// Remove vehicle by its ID
+		g1.removeVehicle(4);
+		// List all vehicles again
+		System.out.println("After removing ID 4: ");
+		System.out.println(g1.listVehicleModels());
+
+		// Empty the garage
+		g1.clearGarage();
+		// List all vehicles
+		System.out.println("Cleared garage: ");
+		System.out.println(g1.listVehicleModels());
 	}
 
 }

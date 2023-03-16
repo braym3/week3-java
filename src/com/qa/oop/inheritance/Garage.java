@@ -10,6 +10,14 @@ public class Garage {
 		return vehicles;
 	}
 
+	public void clearGarage() {
+		vehicles.clear();
+	}
+
+	public double fixVehicle(Vehicle v) {
+		return v.calculateBill();
+	}
+
 	public String calculateAllBills() {
 		String billDetails = "";
 		for (Vehicle v : vehicles) {
@@ -21,13 +29,25 @@ public class Garage {
 	public String listVehicleModels() {
 		String s = "";
 		for (Vehicle v : vehicles) {
-			s += v.getClass().getSimpleName() + " -		" + v.getModel() + "\n";
+			s += v.getClass().getSimpleName() + " - " + v.getModel() + "\n";
+		}
+		return s;
+	}
+
+	public String listVehicleIDs() {
+		String s = "";
+		for (int i = 0; i <= vehicles.size() - 1; i++) {
+			s += "ID: " + i + " - " + vehicles.get(i).getModel() + "\n";
 		}
 		return s;
 	}
 
 	public void removeVehicle(Vehicle vehicle) {
 		this.vehicles.remove(vehicle);
+	}
+
+	public void removeVehicle(int id) {
+		this.vehicles.remove(id);
 	}
 
 	public void removeVehicleType(Vehicle vehicleClass) {

@@ -2,7 +2,7 @@ package com.qa.oop.inheritance;
 
 public class Vehicle {
 
-	private int wheels, seats;
+	private int wheels, seats, id;
 	private String model, colour;
 	private double length, width, height;
 
@@ -78,6 +78,14 @@ public class Vehicle {
 
 	public void setModel(String model) {
 		this.model = model;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
