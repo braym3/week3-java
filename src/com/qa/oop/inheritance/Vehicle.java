@@ -1,6 +1,6 @@
 package com.qa.oop.inheritance;
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int wheels, seats, id;
 	private String model, colour;
@@ -19,10 +19,7 @@ public class Vehicle {
 		this.setHeight(height);
 	}
 
-	public double calculateBill() {
-		double bill = (this.wheels * 2.5) + (this.length + this.width + this.height) + (this.seats * 3.2);
-		return bill;
-	}
+	public abstract double calculateBill();
 
 	public int getWheels() {
 		return wheels;
