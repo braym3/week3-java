@@ -17,24 +17,28 @@ public class PaintWizard {
 		this.paints.add(duluxourousPaints);
 	}
 
+	public int calculateTinsNeeded(int roomSize, Paint p) {
+		int tinNum = roomSize / p.getCoverage();
+		// Need at least 1 tin of paint
+		if (tinNum == 0) {
+			tinNum = 1;
+		}
+		return tinNum;
+	}
+
 	public Paint findLeastWasteful(int roomSize) {
+		// calculate number of tins needed for room size
 		return paints.get(0);
 	}
 
 	public Paint findCheapest(int roomSize) {
 		double cheapestCost = -1;
 		double pCost = 0;
-		int tinNum = 0;
 		Paint cheapestPaint = null;
 
 		for (Paint p : paints) {
 			// calculate cost of using current paint for room size
-			// Need at least 1 tin of paint
-			tinNum = roomSize / p.getCoverage();
-			if (tinNum == 0) {
-				tinNum = 1;
-			}
-			pCost = tinNum * p.getPrice();
+			pCost = calculateTinsNeeded(roomSize, p) * p.getPrice();
 			// System.out.println(p.getCoverage());
 			if (cheapestCost == -1 || pCost < cheapestCost) {
 				cheapestCost = pCost;
