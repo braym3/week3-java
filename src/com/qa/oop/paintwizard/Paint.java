@@ -12,7 +12,7 @@ public class Paint {
 		this.setName(name);
 		this.setPrice(price);
 		this.setLitre(litre);
-		this.setCoverage(coverage);
+		this.setCoverage(coverage * litre);
 	}
 
 	public double calculateCost(int roomArea) {
