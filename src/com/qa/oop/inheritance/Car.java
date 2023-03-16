@@ -16,6 +16,16 @@ public class Car extends Vehicle {
 		this.setReg(reg);
 	}
 
+	@Override
+	public double calculateBill() {
+		double bill = (this.getWheels() * 1.5) + (this.getLength() + this.getWidth() + this.getHeight())
+				+ (this.getSeats() * 4);
+		if (this.isAutomatic()) {
+			bill *= 1.2;
+		}
+		return bill;
+	}
+
 	public boolean isAutomatic() {
 		return automatic;
 	}

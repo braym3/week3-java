@@ -13,6 +13,13 @@ public class Bicycle extends Vehicle {
 		this.setType(type);
 	}
 
+	@Override
+	public double calculateBill() {
+		double bill = ((this.getLength() * 2) + this.getWidth() + this.getHeight());
+
+		return bill;
+	}
+
 	public String getType() {
 		return type;
 	}

@@ -19,11 +19,11 @@ public class Runner {
 		g1.addVehicle(t1);
 
 		// Add a motorbike to the garage
-		Motorbike m1 = new Motorbike(2, 1, "Harley Davidson", "Yellow", 75, 45, 60, "Cruiser");
+		Motorbike m1 = new Motorbike(2, 1, "Harley Davidson", "Yellow", 75, 45, 60, "Cruiser", 500);
 		g1.addVehicle(m1);
 
 		// Add a second bicycle to the garage
-		Bicycle b2 = new Bicycle(2, 1, "Dirt Jumper", "Orange", 50, 20, 30, "BMX");
+		Bicycle b2 = new Bicycle(2, 1, "Dirt Jumper", "Orange", 45, 20, 30, "BMX");
 		g1.addVehicle(b2);
 
 		// Add a second train to the garage
@@ -44,6 +44,14 @@ public class Runner {
 		// Print all models again
 		System.out.println("Removed bicycles: ");
 		System.out.println(g1.listVehicleModels());
+
+		// re-add 2nd train & bicycles
+		g1.addVehicle(t2);
+		g1.addVehicle(b1);
+		g1.addVehicle(b2);
+
+		// Print bill for all vehicles
+		System.out.println(g1.calculateAllBills());
 	}
 
 }

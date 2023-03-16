@@ -14,6 +14,13 @@ public class Train extends Vehicle {
 		this.setHorsepower(horsepower);
 	}
 
+	@Override
+	public double calculateBill() {
+		double bill = (this.getWheels() * 1.5) + (this.getLength() + this.getWidth() + this.getHeight())
+				+ (this.getNumberOfCarriages() * 5.3) + (this.getHorsepower() * 6);
+		return bill;
+	}
+
 	public int getNumberOfCarriages() {
 		return numberOfCarriages;
 	}

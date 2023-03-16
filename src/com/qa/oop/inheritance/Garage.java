@@ -10,6 +10,14 @@ public class Garage {
 		return vehicles;
 	}
 
+	public String calculateAllBills() {
+		String billDetails = "";
+		for (Vehicle v : vehicles) {
+			billDetails += v.getModel() + " = £" + v.calculateBill() + "\n";
+		}
+		return billDetails;
+	}
+
 	public String listVehicleModels() {
 		String s = "";
 		for (Vehicle v : vehicles) {
@@ -34,7 +42,6 @@ public class Garage {
 		for (Vehicle v : toRemove) {
 			removeVehicle(v);
 		}
-
 	}
 
 	public void addVehicle(Vehicle vehicle) {

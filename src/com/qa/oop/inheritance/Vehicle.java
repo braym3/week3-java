@@ -19,6 +19,11 @@ public class Vehicle {
 		this.setHeight(height);
 	}
 
+	public double calculateBill() {
+		double bill = (this.wheels * 2.5) + (this.length + this.width + this.height) + (this.seats * 3.2);
+		return bill;
+	}
+
 	public int getWheels() {
 		return wheels;
 	}
