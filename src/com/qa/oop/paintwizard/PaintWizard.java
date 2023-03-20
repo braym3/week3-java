@@ -18,17 +18,30 @@ public class PaintWizard {
 	}
 
 	public int calculateTinsNeeded(int roomSize, Paint p) {
-		int tinNum = roomSize / p.getCoverage();
-		// Need at least 1 tin of paint
-		if (tinNum == 0) {
-			tinNum = 1;
-		}
+		// round up division
+		int tinNum = (int) Math.ceil((double) roomSize / p.getTinCoverage());
+
 		return tinNum;
 	}
 
 	public Paint findLeastWasteful(int roomSize) {
-		// calculate number of tins needed for room size
-		return paints.get(0);
+		double leastWasteAmount = -1;
+		double pWaste;
+		Paint leastWastePaint = null;
+
+		for (Paint p : paints) {
+			// calculate number of tins needed for room size
+			int tinsNeeded = calculateTinsNeeded(roomSize, p);
+			// calculate amount wasted using this paint and amount of tins
+			pWaste = (tinsNeeded * p.getTinCoverage()) - roomSize;
+			if (leastWasteAmount == -1 || pWaste < leastWasteAmount) {
+				leastWasteAmount = pWaste;
+				leastWastePaint = p;
+			}
+		}
+		System.out.println("The least wasteful paint to use for a room of size " + roomSize + "m** is "
+				+ leastWastePaint.getName() + "\n");
+		return leastWastePaint;
 	}
 
 	public Paint findCheapest(int roomSize) {

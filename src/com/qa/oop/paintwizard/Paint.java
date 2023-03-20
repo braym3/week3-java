@@ -3,7 +3,7 @@ package com.qa.oop.paintwizard;
 public class Paint {
 	private String name;
 	private double price;
-	private int litre, coverage;
+	private int litre, tinCoverage;
 
 	public Paint() {
 	}
@@ -12,7 +12,7 @@ public class Paint {
 		this.setName(name);
 		this.setPrice(price);
 		this.setLitre(litre);
-		this.setCoverage(coverage * litre);
+		this.setTinCoverage(coverage * litre);
 	}
 
 	public double calculateCost(int roomArea) {
@@ -44,12 +44,12 @@ public class Paint {
 		this.litre = litre;
 	}
 
-	public int getCoverage() {
-		return coverage;
+	public int getTinCoverage() {
+		return tinCoverage;
 	}
 
-	public void setCoverage(int coverage) {
-		this.coverage = coverage;
+	public void setTinCoverage(int coverage) {
+		this.tinCoverage = coverage;
 	}
 
 }
